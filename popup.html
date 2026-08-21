@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CalculatePilot</title>
+<link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <a class="brand" href="https://www.calculatepilot.com/" target="_blank" rel="noopener noreferrer" aria-label="Open CalculatePilot website">
+        <img src="icons/icon48.png" alt="" class="brand-icon" />
+        <span class="brand-wordmark">calculatepilot<span class="brand-dot">.</span></span>
+      </a>
+      <nav class="tabs" aria-label="Extension sections">
+        <button class="tab-btn active" data-tab="calc">Calculator</button>
+        <button class="tab-btn" data-tab="tools">All Tools</button>
+      </nav>
+    </header>
+
+    <section id="calc-panel" class="panel active">
+      <div class="display">
+        <div id="expression" class="expression"></div>
+        <div id="result" class="result">0</div>
+      </div>
+      <div class="mode-row">
+        <button id="mode-toggle" class="mode-toggle">Scientific</button>
+        <button id="clear-history" class="ghost-btn" title="Clear all">C</button>
+      </div>
+      <div id="sci-row" class="sci-row hidden">
+        <button class="key sci" data-key="sin(">sin</button>
+        <button class="key sci" data-key="cos(">cos</button>
+        <button class="key sci" data-key="tan(">tan</button>
+        <button class="key sci" data-key="log(">log</button>
+        <button class="key sci" data-key="ln(">ln</button>
+        <button class="key sci" data-key="sqrt(">√</button>
+        <button class="key sci" data-key="^">^</button>
+        <button class="key sci" data-key="pi">π</button>
+        <button class="key sci" data-key="(">(</button>
+        <button class="key sci" data-key=")">)</button>
+      </div>
+      <div class="keypad">
+        <button class="key op" data-action="clear-entry">CE</button>
+        <button class="key op" data-action="backspace">⌫</button>
+        <button class="key op" data-key="%">%</button>
+        <button class="key op" data-key="/">÷</button>
+        <button class="key" data-key="7">7</button>
+        <button class="key" data-key="8">8</button>
+        <button class="key" data-key="9">9</button>
+        <button class="key op" data-key="*">×</button>
+        <button class="key" data-key="4">4</button>
+        <button class="key" data-key="5">5</button>
+        <button class="key" data-key="6">6</button>
+        <button class="key op" data-key="-">−</button>
+        <button class="key" data-key="1">1</button>
+        <button class="key" data-key="2">2</button>
+        <button class="key" data-key="3">3</button>
+        <button class="key op" data-key="+">+</button>
+        <button class="key" data-key="0">0</button>
+        <button class="key" data-key=".">.</button>
+        <button class="key" data-action="backspace-sm">⌫</button>
+        <button class="key equals" data-action="equals">=</button>
+      </div>
+    </section>
+
+    <section id="tools-panel" class="panel">
+      <div class="search-row">
+        <input id="tool-search" type="search" placeholder="Search 158+ calculators…" autocomplete="off" />
+      </div>
+      <div id="categories" class="categories"></div>
+    </section>
+
+    <section id="viewer-panel" class="panel viewer-panel" aria-live="polite">
+      <div class="viewer-toolbar">
+        <button id="viewer-back" class="back-btn" type="button">← All Tools</button>
+        <a id="viewer-open-full" class="open-full" href="https://www.calculatepilot.com/" target="_blank" rel="noopener noreferrer">Open full page ↗</a>
+      </div>
+      <h2 id="viewer-title" class="viewer-title">Calculator</h2>
+      <div class="iframe-wrap">
+        <iframe id="calculator-frame" title="CalculatePilot calculator" loading="eager" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      </div>
+    </section>
+
+    <footer class="app-footer">
+      <nav class="footer-links" aria-label="CalculatePilot links">
+        <a href="https://www.calculatepilot.com/guides/index.html" target="_blank" rel="noopener noreferrer">Guides</a>
+        <a href="https://www.calculatepilot.com/embed/" target="_blank" rel="noopener noreferrer">Embed</a>
+        <a href="https://www.calculatepilot.com/privacy.html" target="_blank" rel="noopener noreferrer">Privacy</a>
+        <a href="https://www.calculatepilot.com/sitemap.html" target="_blank" rel="noopener noreferrer">Sitemap</a>
+      </nav>
+      <a class="site-link" href="https://www.calculatepilot.com/" target="_blank" rel="noopener noreferrer">calculatepilot.com</a>
+    </footer>
+  </div>
+  <script src="calculators.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
